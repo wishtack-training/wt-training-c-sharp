@@ -1,0 +1,23 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Wishtack.Training", "Wishtack.Training\Wishtack.Training.csproj", "{3D32B4DC-5430-4D9C-BD89-47BAA8E9C639}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Wishtack.Training.Tests", "Wishtack.Training.Tests\Wishtack.Training.Tests.csproj", "{5C24CF33-2B22-41BE-86A6-FD431C46DB11}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3D32B4DC-5430-4D9C-BD89-47BAA8E9C639}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3D32B4DC-5430-4D9C-BD89-47BAA8E9C639}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3D32B4DC-5430-4D9C-BD89-47BAA8E9C639}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3D32B4DC-5430-4D9C-BD89-47BAA8E9C639}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5C24CF33-2B22-41BE-86A6-FD431C46DB11}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5C24CF33-2B22-41BE-86A6-FD431C46DB11}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5C24CF33-2B22-41BE-86A6-FD431C46DB11}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5C24CF33-2B22-41BE-86A6-FD431C46DB11}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
