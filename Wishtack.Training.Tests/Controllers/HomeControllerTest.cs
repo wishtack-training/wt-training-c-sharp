@@ -30,6 +30,7 @@ namespace Wishtack.Training.Tests
 			// Assert
 			Assert.AreEqual (expectedVersion, result.ViewData ["Version"]);
 			Assert.AreEqual (expectedRuntime, result.ViewData ["Runtime"]);
+
 		}
 	}
 }
