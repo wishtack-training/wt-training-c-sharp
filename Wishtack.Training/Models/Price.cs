@@ -5,11 +5,14 @@ namespace Wishtack.Training
 	public class Price
 	{
 
+        private ICurrencyHelper _currencyHelper;
+
 		public Price(
 			decimal? amount = null,
 			int? coefficient = null,
 			int? exponent = null,
-			string currency = null
+			string currency = null,
+            ICurrencyHelper currencyHelper = null
 		) {
 
 			this.coefficient = coefficient;
@@ -21,7 +24,21 @@ namespace Wishtack.Training
 				this.exponent = -2;
 			}
 
+            if (currencyHelper == null) {
+                currencyHelper = new CurrencyHelper();
+            }
+
+            this._currencyHelper = currencyHelper;
+
 		}
+
+        public Price ConvertCurrency(string targetCurrency) {
+
+            var amount = this._currencyHelper.CurrentChangeRate (sourceCurrency: this.currency, targetCurrency: targetCurrency) * this.amount;
+
+            return new Price (amount: amount, currency: targetCurrency);
+
+        }
 
 		public decimal? amount {
 			get {

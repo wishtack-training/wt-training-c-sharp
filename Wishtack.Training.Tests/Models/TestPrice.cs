@@ -1,4 +1,5 @@
-﻿using NUnit.Framework;
+﻿using Moq;
+using NUnit.Framework;
 using System;
 
 namespace Wishtack.Training.Tests
@@ -44,6 +45,27 @@ namespace Wishtack.Training.Tests
 			Assert.AreEqual (null, price.currency);
 
 		}
+
+        public void ShouldConvertCurrency () {
+
+            Price priceEur = null;
+            Price priceUsd = null;
+
+            Mock<ICurrencyHelper> mockCurrencyHelper = new Mock<ICurrencyHelper> ();
+
+            mockCurrencyHelper.Setup(instance => instance.CurrentChangeRate("EUR", "USD")).Returns(1.1m);
+
+            priceEur = new Price (amount: 100, currency: "EUR", currencyHelper: mockCurrencyHelper.Object);
+
+            priceUsd = priceEur.ConvertCurrency (targetCurrency: "USD");
+
+            Assert.AreEqual (110, priceUsd.amount);
+            Assert.AreEqual ("USD", priceUsd.currency);
+
+            mockCurrencyHelper.Verify(instance => instance.CurrentChangeRate("EUR", "USD"), Times.Exactly(1));
+
+        }
+
 	}
 }
 
